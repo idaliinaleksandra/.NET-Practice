@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pelimaailmaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Pelit">
+    <Key>
+      <PropertyRef Name="PeliId" />
+    </Key>
+    <Property Name="PeliId" Type="Int32" Nullable="false" />
+    <Property Name="Nimi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Vuosi" Type="Int32" Nullable="false" />
+    <Property Name="Alusta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hinta" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="pelimaailmaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Pelit" EntityType="Self.Pelit" />
+    <EntitySet Name="Tyontekija" EntityType="pelimaailmaModel.Tyontekija" />
+  </EntityContainer>
+  <EntityType Name="Tyontekija">
+    <Key>
+      <PropertyRef Name="TyontekijaId" />
+    </Key>
+    <Property Name="TyontekijaId" Type="Int32" Nullable="false" />
+    <Property Name="Etunimi" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Sukunimi" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Osoite" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Puhelin" Type="Int32" Nullable="false" />
+    <Property Name="Tehtava" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

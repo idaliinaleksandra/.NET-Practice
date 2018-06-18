@@ -1,0 +1,50 @@
+﻿@model PelimaailmaAdmin.Models.Pelit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pelit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vuosi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vuosi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alusta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alusta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PeliId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

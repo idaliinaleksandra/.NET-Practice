@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PelimaailmaAdmin.Models.Tyontekija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Etunimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sukunimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Osoite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Puhelin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tehtava)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Etunimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sukunimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Osoite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Puhelin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tehtava)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.TyontekijaId })
+        </td>
+    </tr>
+}
+
+</table>

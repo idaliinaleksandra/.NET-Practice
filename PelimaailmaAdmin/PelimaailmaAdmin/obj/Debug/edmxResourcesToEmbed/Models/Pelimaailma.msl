@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="pelimaailmaModelStoreContainer" CdmEntityContainer="pelimaailmaEntities">
+    <EntitySetMapping Name="Pelit">
+      <EntityTypeMapping TypeName="pelimaailmaModel.Pelit">
+        <MappingFragment StoreEntitySet="Pelit">
+          <ScalarProperty Name="PeliId" ColumnName="PeliId" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Vuosi" ColumnName="Vuosi" />
+          <ScalarProperty Name="Alusta" ColumnName="Alusta" />
+          <ScalarProperty Name="Hinta" ColumnName="Hinta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tyontekija">
+      <EntityTypeMapping TypeName="IsTypeOf(pelimaailmaModel.Tyontekija)">
+        <MappingFragment StoreEntitySet="Tyontekija">
+          <ScalarProperty Name="TyontekijaId" ColumnName="TyontekijaId" />
+          <ScalarProperty Name="Tehtava" ColumnName="Tehtava" />
+          <ScalarProperty Name="Puhelin" ColumnName="Puhelin" />
+          <ScalarProperty Name="Osoite" ColumnName="Osoite" />
+          <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+          <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

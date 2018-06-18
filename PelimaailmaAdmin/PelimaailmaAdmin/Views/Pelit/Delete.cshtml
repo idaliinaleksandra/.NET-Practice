@@ -1,0 +1,56 @@
+﻿@model PelimaailmaAdmin.Models.Pelit
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pelit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vuosi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vuosi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alusta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alusta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hinta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hinta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

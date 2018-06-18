@@ -1,0 +1,79 @@
+TAULUJEN LUONTI
+
+CREATE TABLE Pelit (
+PeliId INT NOT NULL PRIMARY KEY,
+Nimi VARCHAR(50) NOT NULL,
+Vuosi INT NOT NULL,
+Alusta VARCHAR(50)
+Hinta DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE Tilaus (
+TilausId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+PVM DATE NOT NULL,
+);
+
+CREATE TABLE Tilausrivi (
+RiviId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+TilausId INT NOT NULL,
+PeliId INT NOT NULL,
+lukumaara INT NOT NULL,
+FOREIGN KEY (TilausId) REFERENCES Tilaus(TilausId),
+FOREIGN KEY (PeliId) REFERENCES Pelit(PeliId)
+);
+
+CREATE TABLE Varasto (
+PeliId INT NOT NULL PRIMARY KEY,
+Vapaalkm INT NOT NULL,
+Varattulkm INT NOT NULL,
+FOREIGN KEY (PeliId) REFERENCES Pelit(PeliId)
+);
+
+
+YLLÄPITOSOVELLUS:
+
+CREATE TABLE Tyontekija (
+TyontekijaId INT NOT NULL PRIMARY KEY,
+Etunimi VARCHAR(30) NOT NULL,
+Sukunimi VARCHAR(30) NOT NULL,
+Osoite VARCHAR(50) NOT NULL,
+Puhelin INT NOT NULL,
+Tehtava VARCHAR(200) NOT NULL
+);
+
+TESTITIEDOT:
+
+INSERT INTO Pelit (PeliId, Nimi, Vuosi, Alusta, Hinta)
+VALUES (1, 'The Last of Us', 2013, 'Playstation 3', 50.00);
+
+INSERT INTO Pelit (PeliId, Nimi, Vuosi, Alusta, Hinta)
+VALUES (2, 'Overwatch', 2016, 'PC', 69.99);
+
+INSERT INTO Pelit (PeliId, Nimi, Vuosi, Alusta, Hinta)
+VALUES (3, 'Hammerwatch', 2016, 'PC', 10.00);
+
+INSERT INTO Tilaus (TilausId, PVM)
+VALUES ();
+
+INSERT INTO Tilausrivi (RiviId, TilausId, PeliId, lukumaara)
+VALUES ();
+
+INSERT INTO Varasto (PeliId, Vapaalkm)
+VALUES (1, 100);
+
+INSERT INTO Varasto (PeliId, Vapaalkm)
+VALUES (2, 10);
+
+INSERT INTO Varasto (PeliId, Vapaalkm)
+VALUES (3, 200);
+
+YLLÄPITOSOVELLUS:
+
+INSERT INTO Tyontekija (TyontekijaId, Etunimi, Sukunimi, Osoite, Puhelin, Tehtava)
+VALUES (1, 'Tommi', 'Toimisto', 'Toimistontie 5 F 2, 00990 Helsinki', 44012345, 'Toimistotyöläinen');
+
+INSERT INTO Tyontekija (TyontekijaId, Etunimi, Sukunimi, Osoite, Puhelin, Tehtava)
+VALUES (2, 'Milla', 'Myyjä', 'Myyjäntie 3, 11111 Helsinki', 44012345, 'Myyjä');
+
+INSERT INTO Tyontekija (TyontekijaId, Etunimi, Sukunimi, Osoite, Puhelin, Tehtava)
+VALUES (3, 'Pekka', 'Pekkanen', 'Pekantie 9, 12345 Helsinki', 44012345, 'Toimitusjohtaja');

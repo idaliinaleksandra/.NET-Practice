@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pelimaailmaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Pelit">
+    <Key>
+      <PropertyRef Name="PeliId" />
+    </Key>
+    <Property Name="PeliId" Type="int" Nullable="false" />
+    <Property Name="Nimi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vuosi" Type="int" Nullable="false" />
+    <Property Name="Alusta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hinta" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tyontekija">
+    <Key>
+      <PropertyRef Name="TyontekijaId" />
+    </Key>
+    <Property Name="TyontekijaId" Type="int" Nullable="false" />
+    <Property Name="Etunimi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Sukunimi" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Osoite" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Puhelin" Type="int" Nullable="false" />
+    <Property Name="Tehtava" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="pelimaailmaModelStoreContainer">
+    <EntitySet Name="Pelit" EntityType="Self.Pelit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tyontekija" EntityType="Self.Tyontekija" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
